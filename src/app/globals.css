@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  /* Typography palette */
+  --brand: #3b6156;
+  --subheading: #5f6f6a;
+  --body: #4b5563;
+
+  --foreground: var(--body);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Brand typography tokens */
+  --color-brand: var(--brand);
+  --color-subheading: var(--subheading);
+  --color-body: var(--body);
+
+  --font-brand: var(--font-instrument-serif); /* for headings / logo */
+  --font-sub: var(--font-dm-sans);
+  --text-md: 16px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sub);
+}
+
+/* Typography hierarchy */
+h1,
+h2,
+h3 {
+  color: var(--brand);
+}
+
+/* Form/label typography */
+label,
+legend {
+  color: var(--subheading);
+}
+
+.menu-button {
+  background-color: #e4f2e0;
+  color: var(--brand);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 100px 100px 0 0;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-weight: 500;
+  display: flex;
+  position: relative;
+}
+/* Base styles */
+.flex-h {
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  display: flex;
+}
+
+.flex-h.hero-gallery {
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-image-wrapper {
+  border-radius: 20px;
+  width: 260px;
+  min-width: 222px;
+  height: 260px;
+  display: flex;
+  overflow: hidden;
+  position: relative !important;
+}
+
+.hero-image-wrapper.transform-01 {
+  z-index: 4;
+  position: relative;
+  transform: rotate(-7.77deg);
+}
+
+.hero-image-wrapper.transform-02 {
+  z-index: 5;
+  position: relative;
+  transform: rotate(9.53deg);
+}
+
+.hero-image-wrapper.transform-03 {
+  z-index: 4;
+  position: relative;
+  transform: rotate(-7.77deg);
+}
+
+.hero-image-wrapper > div {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SM breakpoint (640px) */
+@media (min-width: 640px) {
+  .flex-h.hero-gallery {
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+  }
+
+  .hero-image-wrapper {
+    border-radius: 24px;
+    width: 300px;
+    min-width: 240px;
+    height: 370px;
+  }
+}
+
+/* MD breakpoint (768px) */
+@media (min-width: 768px) {
+  .flex-h.hero-gallery {
+    grid-column-gap: 55px;
+    grid-row-gap: 55px;
+  }
+
+  .hero-image-wrapper {
+    border-radius: 28px;
+    width: 333px;
+    min-width: 287px;
+    height: 360px;
+  }
+}
+
+/* LG breakpoint (1024px) */
+@media (min-width: 1024px) {
+  .flex-h.hero-gallery {
+    grid-column-gap: 70px;
+    grid-row-gap: 70px;
+  }
+
+  .hero-image-wrapper {
+    border-radius: 30px;
+    width: 406px;
+    min-width: 326px;
+    height: 470px;
+  }
+}
+
+/* XL breakpoint (1280px) */
+@media (min-width: 1280px) {
+  .flex-h.hero-gallery {
+    grid-column-gap: 80px;
+    grid-row-gap: 80px;
+  }
+
+  .hero-image-wrapper {
+    border-radius: 33px;
+    width: 406px;
+    min-width: 326px;
+    height: 470px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .flex-h.hero-gallery {
+    column-gap: 55px;
+    row-gap: 55px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .flex-h.hero-gallery {
+    gap: 44px;
+  }
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background-color: var(--brand);
+  color: white;
+}
+
+.tab-content {
+  padding: 20px;
+}
+
+.category h2 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.item {
+  margin-bottom: 15px;
+}
+
+.item h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.item span {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.item button {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.image-cover {
+  object-fit: cover;
+}
